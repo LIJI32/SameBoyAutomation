@@ -3,7 +3,7 @@ name: Site Update
 on:
   push:
     branches:
-      - automation_results
+      - master
 
 jobs:
   build:
@@ -15,4 +15,4 @@ jobs:
         token: ${{ secrets.WEBSITETOKEN }}
         submodules: false
     
-    - run: git config --global user.name 'Automation Updater' && git config --global user.email '<>' &&git rm automation && git submodule add -b automation_results https://github.com/LIJI32/SameBoy.git automation && git add automation && git commit -m 'Update automation submodule' && git push
+    - run: git config --global user.name 'Automation Updater' && git config --global user.email '<>' && git rm automation && git submodule add https://github.com/LIJI32/SameBoyAutomation.git automation && git add automation && git commit -m 'Update automation submodule' && git push
